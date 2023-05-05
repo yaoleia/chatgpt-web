@@ -7,31 +7,31 @@ services:
       - 3002:3002
     environment:
       # 二选一
-      OPENAI_API_KEY: sk-xxx
+      OPENAI_API_KEY:
       # 二选一
-      OPENAI_ACCESS_TOKEN: xxx
+      OPENAI_ACCESS_TOKEN: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1UaEVOVUpHTkVNMVFURTRNMEZCTWpkQ05UZzVNRFUxUlRVd1FVSkRNRU13UmtGRVFrRXpSZyJ9.eyJodHRwczovL2FwaS5vcGVuYWkuY29tL3Byb2ZpbGUiOnsiZW1haWwiOiJ5YW9sZWlhQDE2My5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZX0sImh0dHBzOi8vYXBpLm9wZW5haS5jb20vYXV0aCI6eyJ1c2VyX2lkIjoidXNlci1LRzM0SnV5N2FITlE0ejNIV3d1V3YzemwifSwiaXNzIjoiaHR0cHM6Ly9hdXRoMC5vcGVuYWkuY29tLyIsInN1YiI6IndpbmRvd3NsaXZlfDA2NDkxZDVmZGI1OWI1ZDQiLCJhdWQiOlsiaHR0cHM6Ly9hcGkub3BlbmFpLmNvbS92MSIsImh0dHBzOi8vb3BlbmFpLm9wZW5haS5hdXRoMGFwcC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjgzMjAwOTkzLCJleHAiOjE2ODQ0MTA1OTMsImF6cCI6IlRkSkljYmUxNldvVEh0Tjk1bnl5d2g1RTR5T282SXRHIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCBtb2RlbC5yZWFkIG1vZGVsLnJlcXVlc3Qgb3JnYW5pemF0aW9uLnJlYWQgb2ZmbGluZV9hY2Nlc3MifQ.whn2jafNCLr5MwGPLleX5iy8H0L8Sc0fVC86GBjZR5th3Xe-zyGhIIRGzEOjWqTwrs3HYJXc3wKr5yUi0UVc6E_bVOZU5Qi8UgNjcMFYWsQ98ZSXvEhQwl8d7RXg4a2bRmwcRYDAVhGflllq3xO7i3IXQigFej3CEQckXFPhVRUQHX8m-OilImzmjBk0_t-TlsuC4ZMbNXgItW1RZPSd-HqQHzEHGxZukCP1Zij2uM3zjkTd-7Kx_uaBSKqpHBWGjd63k-uMaVJg4x0ca66Uxqc_jm0sfoENYnrglaxhiA0J4qeTf_jqgWJoWulIu_wEsQEZQcWI8GBk2KFMytKRdw
       # API接口地址，可选，设置 OPENAI_API_KEY 时可用
-      OPENAI_API_BASE_URL: xxx
+      OPENAI_API_BASE_URL:
       # API模型，可选，设置 OPENAI_API_KEY 时可用
-      OPENAI_API_MODEL: xxx
+      OPENAI_API_MODEL:
       # 反向代理，可选
-      API_REVERSE_PROXY: xxx
+      API_REVERSE_PROXY:
       # 访问权限密钥，可选
-      AUTH_SECRET_KEY: xxx
+      AUTH_SECRET_KEY:
       # 每小时最大请求次数，可选，默认无限
       MAX_REQUEST_PER_HOUR: 0
       # 超时，单位毫秒，可选
-      TIMEOUT_MS: 60000
+      TIMEOUT_MS: 90000
       # Socks代理，可选，和 SOCKS_PROXY_PORT 一起时生效
-      SOCKS_PROXY_HOST: xxx
+      SOCKS_PROXY_HOST:
       # Socks代理端口，可选，和 SOCKS_PROXY_HOST 一起时生效
-      SOCKS_PROXY_PORT: xxx
+      SOCKS_PROXY_PORT:
       # HTTPS_PROXY 代理，可选
-      HTTPS_PROXY: http://xxx:7890
+      HTTPS_PROXY:
   nginx:
     image: nginx:alpine
     ports:
-      - '80:80'
+      - '3333:80'
     expose:
       - '80'
     volumes:
